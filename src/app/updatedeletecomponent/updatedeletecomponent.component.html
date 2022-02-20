@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+  <div class="col-md-4 register-employee">
+    <input type="text" label="Enter Transaction id" (input)="Transactionid=$event.target.value">
+    <button type="button" (click)="getdata()">Get Details</button>
+    <!-- form card register -->
+    <div class="card-body">
+      <form [formGroup]="carwashForm">
+        <div class="form-group">
+          <label for="inputName">Customer Name</label>
+          <input class="form-control" type="text" formControlName="custname">
+        </div>
+        <div class="form-group">
+          <label for="inputName">User Name</label>
+          <input class="form-control" type="text" formControlName="username">
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3">Booking Date</label>
+          <input class="form-control" type="date" formControlName="bookingdate">
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3">Bookied service</label>
+          <input class="form-control" type="text" formControlName="bookingservice">
+        </div>
+        <div class="form-group">
+          <label for="inputVerify3">Choose time</label>
+          <input class="form-control" type="time" formControlName="bookingstarttime">
+        </div>
+        <div class="form-group">
+          <label for="inputVerify3">Vehicle type</label>
+          <input class="form-control" type="text" formControlName="vehiclemodel">
+        </div>
+        <div class="form-group">
+          <label for="inputVerify3">User Email</label>
+          <input class="form-control" type="text" formControlName="email">
+        </div>
+        <div class="form-group">
+          <label for="inputVerify3">Phone Number</label>
+          <input class="form-control" type="text" formControlName="phoneno">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success btn-lg btn-block" (click)="onSubmit()">Update</button>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success btn-lg btn-block" (click)="onDelete()">Delete</button>
+        </div>
+      </form>
+      {{errormessage}}
+    </div>
+  </div><!-- form card register -->
+</div>

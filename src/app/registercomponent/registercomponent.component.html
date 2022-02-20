@@ -1,0 +1,25 @@
+<div class="row justify-content-center">
+  <div class="col-md-4 register-employee" style="font-size: xx-large; position: relative;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    top:50px;
+  ">
+    <div>
+      <a>Username</a>
+      <input type=" text" (input)="username=$event.target.value">
+    </div>
+    <div>
+      <a>Customer name</a>
+      <input type="text" (input)="custname=$event.target.value">
+    </div>
+    <div>
+      <a>Password</a>
+      <input type="password" (input)="password=$event.target.value">
+    </div>
+    <div>
+      {{errormessage}}
+    </div>
+    <button type="button" class="btn btn-success btn-lg btn-block" (click)="register()" style="position: relative; top:25px">Register</button>
+  </div>
+</div>

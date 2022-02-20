@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+  <div class="col-md-4 register-employee">
+    <!-- form card register -->
+    <div class="card-body">
+      <form [formGroup]="carwashForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="inputName">Customer Name</label>
+          <input class="form-control" type="text" formControlName="custname">
+        </div>
+        <div class="form-group">
+          <label for="inputName">User Name</label>
+          <input class="form-control" type="text" formControlName="username">
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3">Booking Date</label>
+          <input class="form-control" type="date" formControlName="bookingdate">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3">Choose service</label>
+          <select class="custom-select form-control" (change)="updateProfile($event)"
+            formControlName="bookingservice">
+            <option value="">Choose...</option>
+            <option *ngFor="let services of bookingservicelist" value="{{services}}">{{services}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="inputVerify3">Choose time</label>
+          <input class="form-control" type="time" formControlName="bookingstarttime">
+        </div>
+        <div class="form-group">
+          <label for="inputVerify3">Vehicle type</label>
+          <input class="form-control" type="text" formControlName="vehiclemodel">
+        </div>
+        <div class="form-group">
+          <label for="inputVerify3">User Email</label>
+          <input class="form-control" type="text" formControlName="email">
+        </div>
+        <div class="form-group">
+          <label for="inputVerify3">Phone Number</label>
+          <input class="form-control" type="text" formControlName="phoneno">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success btn-lg btn-block" type="submit">Register</button>
+        </div>
+      </form>
+      <a>{{errormessage}}</a>
+    </div>
+  </div><!-- form card register -->
+</div>
